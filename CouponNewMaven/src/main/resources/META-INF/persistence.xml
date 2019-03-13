@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <!-- Define the unit name (must be identical to the one defined in the application context) -->
+	<persistence-unit name="coupondb">
+		<properties>
+		    
+		    <!-- If using Db other than Postgres - replace the driver name  -->
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			
+			<!-- Define the DB_SCHEMA_NAME & YOUR_DB_USER_NAME &  YOUR_PASSWORD fields-->
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/couponjpa?serverTimezone=UTC" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="1234" />
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />			
+		
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			
+		</properties>
+	</persistence-unit>
+</persistence>
