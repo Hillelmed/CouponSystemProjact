@@ -3,7 +3,6 @@ package com.hillel.couponsystem.entitiy;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,7 +30,7 @@ public class CustomerEntity {
 	@Column(name="Password", nullable=false)
 	private long password;
 	
-	@ManyToMany(cascade = {CascadeType.ALL},fetch=FetchType.LAZY)
+	@ManyToMany(fetch=FetchType.LAZY)
 	@JoinTable(name="customer_coupon", joinColumns= 
    {@JoinColumn(name="cust_id")},inverseJoinColumns={@JoinColumn(name="coup_id")})
 	private Collection<CouponEntity> coupons;

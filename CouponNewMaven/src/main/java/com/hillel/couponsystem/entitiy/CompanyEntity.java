@@ -2,6 +2,7 @@ package com.hillel.couponsystem.entitiy;
 
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,7 +38,7 @@ public class CompanyEntity {
 	@Column(name="Password", nullable=false)
 	private long password;
 	
-	@OneToMany(mappedBy="company",fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="company",fetch=FetchType.LAZY ,cascade = {CascadeType.ALL})
 	private Collection<CouponEntity> coupons;
 
 
